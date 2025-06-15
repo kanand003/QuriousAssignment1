@@ -47,16 +47,17 @@ const mockServerInfo = {
 };
 
 function App() {
-  const [serverInfo, setServerInfo] = useState(null);
-  useEffect(() => {
-    // In production, just use mock data since we don't have a backend deployed
-    if (import.meta.env.PROD) {
+  const [serverInfo, setServerInfo] = useState(null);  useEffect(() => {
+    // Try to fetch from the API first
+    const apiUrl = import.meta.env.VITE_API_URL;
+    
+    if (!apiUrl) {
+      console.log('No API URL configured, using mock data');
       setServerInfo(mockServerInfo);
       return;
     }
 
-    // In development, try to fetch from the API first
-    axios.get(`${import.meta.env.VITE_API_URL}/api/server-info`)
+    axios.get(`${apiUrl}/server-info`)
       .then((res) => setServerInfo(res.data))
       .catch((err) => {
         console.error('Failed to load server info:', err);
