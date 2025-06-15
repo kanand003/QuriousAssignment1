@@ -89,11 +89,10 @@ function App() {
           <button className="bf-button">JOIN</button>
           <button className="bf-button">SPECTATE</button>
           <button className="bf-button">JOIN AS COMMANDER</button>
-          <button className ="bf-button">13762</button>
-          {/* <div className="star-button">
-            <span className="star-icon">★</span>
+          <div className="star-button"> 
+            <span className="star-icon">★ 13672</span>
             <span>{serverInfo.stars}</span>
-          </div> */}
+          </div>
         </div>
 
         <div className="server-stats">
