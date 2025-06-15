@@ -65,9 +65,10 @@ function App() {
       <div className="loading-text">Loading server data...</div>
       <div className="loading-spinner"></div>
     </div>
-  );
-  return (
+  );  return (
     <div className="bf-app">
+      <div className="menu-background"></div>
+      <div className="menu-darker-bg"></div>
       <div className="bf-header">
         <div className="breadcrumb">
           <span>MULTIPLAYER / SERVER BROWSER /</span>
@@ -75,7 +76,7 @@ function App() {
         </div>
       </div>
 
-      <div className="server-container menu-background menu-darker-bg">
+      <div className="server-container">
         <div className="server-top">
           <h1 className="server-name">{serverInfo.name}</h1>
           <div className="server-mode">
@@ -88,10 +89,11 @@ function App() {
           <button className="bf-button">JOIN</button>
           <button className="bf-button">SPECTATE</button>
           <button className="bf-button">JOIN AS COMMANDER</button>
-          <div className="star-button">
+          <button className ="bf-button">13762</button>
+          {/* <div className="star-button">
             <span className="star-icon">★</span>
             <span>{serverInfo.stars}</span>
-          </div>
+          </div> */}
         </div>
 
         <div className="server-stats">
