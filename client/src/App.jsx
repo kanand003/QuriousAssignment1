@@ -4,7 +4,7 @@ import './App.css';
 
 // Mock data to use when API is unavailable
 const mockServerInfo = {
-  name: "#1| NASA | Noobs Welcome | Conquest 40Hz",
+  name: "! RC3-BASEMAPS",
   shortGameMode: "CONQUEST LARGE",
   gameMode: "CONQUEST LARGE - SIEGE OF SHANGHAI - NORMAL - 40 HZ",
   map: "Siege of Shanghai",
