@@ -6,7 +6,7 @@ function App() {
   const [serverInfo, setServerInfo] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/server-info')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/server-info`)
       .then((res) => setServerInfo(res.data))
       .catch((err) => console.error('Failed to load server info:', err));
   }, []);
