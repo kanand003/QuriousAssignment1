@@ -38,8 +38,9 @@ body {
   top: 0;
   bottom: 0;
   width: 64px;
-  background: url('/images/side-menu.png') left center/contain repeat-y;
+  background: url('/images/side-menu.png') left top/64px auto no-repeat;
   z-index: 10;
+  height: 100vh;
 }
 
 .bf-header {
@@ -71,7 +72,6 @@ body {
 }
 
 .server-container {
-  background: rgba(0, 0, 0, 0.2);
   margin: 0 20px 20px calc(64px + 20px);
   position: relative;
   z-index: 1;
@@ -84,7 +84,6 @@ body {
 .server-top {
   margin-bottom: 1rem;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.15);
 }
 
 .server-name {
@@ -120,9 +119,10 @@ body {
 }
 
 .bf-button {
-  background: url('/images/button.png') center/100% 100% no-repeat;
-  color: #99aab5;
-  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 2px;
   padding: 0.65rem 1.5rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -137,19 +137,18 @@ body {
   letter-spacing: 0.5px;
   font-size: 0.85rem;
   position: relative;
-  text-shadow: 0 0 2px rgba(0,0,0,0.7);
-  filter: brightness(0.9);
 }
 
 .bf-button:hover {
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   transform: scale(1.02);
-  filter: brightness(1.1);
 }
 
 .bf-button:active {
   transform: scale(0.98);
-  filter: brightness(0.8);
+  background-color: #f0f0f0;
+  color: #000000;
 }
 
 .star-button {
@@ -182,7 +181,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(0, 0, 0, 0.2);
   margin: 0 1.5rem 1.5rem;
   border-radius: 2px;
 }
@@ -195,7 +193,7 @@ body {
 }
 
 .stat-label {
-  color: #8a8a8a;
+  color: #ffffff;
   font-size: 0.75rem;
   text-transform: uppercase;
   font-family: 'Purista', 'Rajdhani', sans-serif;
@@ -219,35 +217,11 @@ body {
 
 .details-section {
   margin: 1.5rem;
-  background: rgba(0, 0, 0, 0);
   border-radius: 2px;
   overflow: hidden;
 }
 
-.details-section:hover {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.details-section:hover h2,
-.details-section:hover .setting-name,
-.details-section:hover .setting-value {
-  color: white;
-}
-
-.details-section::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #ffffff00;
-  opacity: 0.5;
-  border-radius: 4px 0 0 4px;
-}
-
 .details-section h2 {
-  background: rgba(0, 0, 0, 0.3);
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;
@@ -278,16 +252,16 @@ body {
 }
 
 .setting-row:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255);
 }
 
 .setting-row:hover .setting-name,
 .setting-row:hover .setting-value {
-  color: white;
+  color: black;
 }
 
 .setting-name {
-  color: #8a8a8a;
+  color: #ffffff;
   font-size: 0.85rem;
   font-family: 'Purista', 'Rajdhani', sans-serif;
   letter-spacing: 0.5px;
