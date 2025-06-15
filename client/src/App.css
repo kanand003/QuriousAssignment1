@@ -55,7 +55,7 @@ body {
 }
 
 .breadcrumb {
-  color: #8a8a8a;
+  color: #ffffff;
   font-size: 0.8rem;
   font-family: 'Purista', 'Rajdhani', sans-serif;
   letter-spacing: 0.5px;
@@ -63,7 +63,7 @@ body {
 }
 
 .breadcrumb h1 {
-  color: #99aab5;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 600;
   margin-top: 0.25rem;
@@ -72,13 +72,14 @@ body {
 }
 
 .server-container {
-  margin: 0 20px 20px calc(64px + 20px);
+  margin: 0 104px 20px calc(64px + 5px);
   position: relative;
   z-index: 1;
   border-radius: 2px;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
   padding: 0;
+  width: calc(100% - 190px);
 }
 
 .server-top {
@@ -209,14 +210,14 @@ body {
 
 .server-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0 20px;
 }
 
 .details-section {
-  margin: 1.5rem;
+  margin: 0;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -241,9 +242,10 @@ body {
 }
 
 .setting-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(50px, auto);
+  gap: 1rem;
+  padding: 0.25rem 0.75rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -272,6 +274,8 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
   font-family: 'Purista', 'Rajdhani', sans-serif;
+  text-align: right;
+  margin-left: auto;
 }
 
 .map-rotation {
@@ -326,7 +330,6 @@ body {
   display: block;
 }
 
-/* Loading styles */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -380,7 +383,6 @@ body {
   opacity: 0.9;
 }
 
-/* Add custom scrollbar for the container */
 .server-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -395,5 +397,17 @@ body {
 }
 
 .server-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgb(255, 255, 255);
+}
+
+.friends-section {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  width: 100px;
+  background: url('/images/invite.png') center/contain no-repeat;
+  z-index: 10;
+  height: 180px;
+  margin-right: -10px;
+  cursor: pointer;
 }
