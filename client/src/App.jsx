@@ -47,21 +47,26 @@ const mockServerInfo = {
 };
 
 function App() {
-  const [serverInfo, setServerInfo] = useState(null);  useEffect(() => {
-    // Try to fetch from the API first
+  const [serverInfo, setServerInfo] = useState(null);  useEffect(() => {    // Try to fetch from the API first
     const apiUrl = import.meta.env.VITE_API_URL;
     
     if (!apiUrl) {
-      console.log('No API URL configured, using mock data');
+      console.log('%c Using mock data: No API URL configured', 'color: yellow; font-weight: bold');
       setServerInfo(mockServerInfo);
       return;
     }
 
+    console.log('%c Attempting to fetch from:', 'color: cyan; font-weight: bold', `${apiUrl}/server-info`);
+    
     axios.get(`${apiUrl}/server-info`)
-      .then((res) => setServerInfo(res.data))
+      .then((res) => {
+        console.log('%c Successfully fetched data from API', 'color: green; font-weight: bold');
+        console.log('API Response:', res.data);
+        setServerInfo(res.data);
+      })
       .catch((err) => {
-        console.error('Failed to load server info:', err);
-        console.log('Using mock data instead');
+        console.error('%c API Error:', 'color: red; font-weight: bold', err);
+        console.log('%c Falling back to mock data', 'color: yellow; font-weight: bold');
         setServerInfo(mockServerInfo);
       });
   }, []);
